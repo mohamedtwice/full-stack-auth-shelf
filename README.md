@@ -10,18 +10,18 @@ Sass
 Bootstrap
 
 #### To-Do
-√ Install dependencies
-√ Write server code
-√ Create and link routes
-√ Create front page that displays shelf publicly
+- [ ] Install dependencies
+- [ ] Write server code
+- [ ] Create and link routes
+- [ ] Create front page that displays shelf publicly
 1. Login/Register buttons
 a. Login/Register much toggle depending on if user is logged in
 b. Login is connected to user database and accesses past stored items
-√ Create display for shelf
+- [ ] Create display for shelf
 + Wood background with dividers to represent shelf
 + Display only 3 items per "shelf"
 + Display
-√ Create image form
+- [ ] Create image form
 1. Input for item name
 2. Input for item description
 3. Input for image URL (alerts user that img url is optional)
