@@ -11,17 +11,19 @@ Bootstrap
 
 #### To-Do
 - [x] Install dependencies
-- [ ] Write server code
-- [ ] Create and link routes
+- [x] Write server code
+- [x] Create and link routes
 - [ ] Create front page that displays shelf publicly
 1. Login/Register buttons
 a. Login/Register much toggle depending on if user is logged in
 b. Login is connected to user database and accesses past stored items
+2. Add Item button
+a. Redirects to add item form
 - [ ] Create display for shelf
 + Wood background with dividers to represent shelf
 + Display only 3 items per "shelf"
 + Display
-- [ ] Create image form
+- [ ] Create item form
 1. Input for item name
 2. Input for item description
 3. Input for image URL (alerts user that img url is optional)

@@ -4,7 +4,8 @@ myApp.controller('UserController', function (shelfService){
   console.log('in user controller');
 
   var vm = this;
-
+vm.loggingIn= true;
+  vm.registeredUser = false;
 
   vm.logIn = function(){
     console.log('in login');
@@ -22,6 +23,14 @@ myApp.controller('UserController', function (shelfService){
         }); // end shelfService
   }; //end login
 
+  //logout
+  vm.logOut= function(){
+    console.log('logging out:', vm.name);
+    vm.registeredUser=!vm.registeredUser;
+vm.username= '';
+  };
+  //end logout
+
   vm.register =  function(){
     console.log('in regiter');
     var userInfo = {
@@ -34,5 +43,10 @@ myApp.controller('UserController', function (shelfService){
           vm.passwordRegister = '';
     }); // end shelfService
   }; // end register
+
+// start toggleLogin
+vm.toggleLogin=function(){
+  vm.loggingIn=!vm.loggingIn;
+};
 
 }); // end controller

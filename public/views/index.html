@@ -19,16 +19,37 @@
       </header>
     <div ng-app='myApp' class="container">
       <section ng-controller='UserController as uc'>
+
+        <!-- login -->
+        <div ng-hide="uc.registeredUser">
+        <div ng-hide="uc.loggingIn">
+
+
         <form ng-submit="uc.logIn()" class="">
           <input ng-model='uc.usernameInput' type="text" name="" value="" placeholder="Username">
           <input ng-model='uc.passwordInput' type="password" name="" value="" placeholder="Password">
           <button ng-click="uc.logIn()" type="button" name="button">Login</button>
+          <p>Don't have a login? <button type="button" name="button" class="buttonToRegisterPage" ng-click="uc.toggleLogin()">Register here!</button></p>
         </form>
+</div>
+</div>
+        <!-- register -->
+        <div ng-hide="uc.registeredUser">
+        <div ng-show="uc.loggingIn">
+
         <form ng-submit="uc.register()" class="">
           <input ng-model='uc.usernameRegister' type="text" name="" value="" placeholder="Username">
           <input ng-model='uc.passwordRegister' type="password" name="" value="" placeholder="Password">
           <button ng-click="uc.register()" type="button" name="button">Register</button>
+          <p>Already registered? <button type="button" name="button" class="buttonToLoginPage" ng-click="uc.toggleLogin()">Login here!</button></p>
         </form>
+          </div>
+        </div>
+        <div ng-show="uc.registeredUser">
+          Logged in as: {{uc.username}}
+          <button type="button" name="button" ng-click="uc.addItem()">Add New Item</button>
+          <button type="button" name="button" ng-click="uc.logOut()"> Log Out</button>
+        </div>
       </section>
     </div>
 
