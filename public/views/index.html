@@ -19,15 +19,15 @@
       </header>
     <div ng-app='myApp' class="container">
       <section ng-controller='UserController as us'>
-        <form ng-sumbit="us.logIn()" class="">
+        <form ng-submit="us.logIn()" class="">
           <input ng-model='us.usernameInput' type="text" name="" value="" placeholder="Username">
           <input ng-model='us.passwordInput' type="password" name="" value="" placeholder="Password">
           <button ng-click="us.logIn()" type="button" name="button">Login</button>
         </form>
-        <form ng-sumbit="" class="">
+        <form ng-submit="us.register()" class="">
           <input ng-model='us.usernameRegister' type="text" name="" value="" placeholder="Username">
           <input ng-model='us.passwordRegister' type="password" name="" value="" placeholder="Password">
-          <button ng-click="" type="button" name="button">Register</button>
+          <button ng-click="us.register()" type="button" name="button">Register</button>
         </form>
       </section>
     </div>

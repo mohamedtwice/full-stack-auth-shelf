@@ -5,6 +5,7 @@ myApp.controller('UserController', function (shelfService){
 
   var vm = this;
 
+
   vm.logIn = function(){
     console.log('in login');
     var userInfo = {
@@ -12,8 +13,22 @@ myApp.controller('UserController', function (shelfService){
       password: vm.passwordInput
     };
 
-    console.log(userInfo);
+    shelfService.sendLogIn(userInfo);
 
+    vm.usernameInput = '';
+    vm.passwordInput ='';
   };//end login
+
+  vm.register =  function(){
+    console.log('in regiter');
+    var userInfo = {
+      username: vm.usernameRegister,
+      password: vm.passwordRegister
+    };
+
+    shelfService.sendRegister(userInfo);
+    vm.usernameInput = '';
+    vm.passwordInput ='';
+  };
 
 });
