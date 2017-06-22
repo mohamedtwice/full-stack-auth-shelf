@@ -8,6 +8,7 @@
     <script src="vendors/angular.min.js" charset="utf-8"></script>
     <script src="vendors/angular-route.min.js" charset="utf-8"></script>
     <script src="scripts/ourShelf.js" charset="utf-8"></script>
+    <script src="scripts/services/shelfService.js" charset="utf-8"></script>
   </head>
   <body>
 
@@ -16,7 +17,20 @@
           <h1>Our Bookshelf</h1>
         </div>
       </header>
-
+    <div ng-app='myApp' class="container">
+      <section ng-controller='UserController as us'>
+        <form ng-sumbit="us.logIn()" class="">
+          <input ng-model='us.usernameInput' type="text" name="" value="" placeholder="Username">
+          <input ng-model='us.passwordInput' type="password" name="" value="" placeholder="Password">
+          <button ng-click="us.logIn()" type="button" name="button">Login</button>
+        </form>
+        <form ng-sumbit="" class="">
+          <input ng-model='us.usernameRegister' type="text" name="" value="" placeholder="Username">
+          <input ng-model='us.passwordRegister' type="password" name="" value="" placeholder="Password">
+          <button ng-click="" type="button" name="button">Register</button>
+        </form>
+      </section>
+    </div>
 
   </body>
 </html>
