@@ -9,6 +9,13 @@ sv.sendLogIn = function(data){
 
 sv.sendRegister = function(data){
   console.log('in sendRegister', data);
+  return $http({
+    method: 'POST',
+    url: '/register',
+    data: data
+  }).then(function(response) {
+    console.log('back from register attempt:', response);
+  }); // end http
 };
 
 });

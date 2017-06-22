@@ -14,9 +14,8 @@ myApp.controller('UserController', function (shelfService){
     };
 
     shelfService.sendLogIn(userInfo);
-
     vm.usernameInput = '';
-    vm.passwordInput ='';
+    vm.passwordInput = '';
   };//end login
 
   vm.register =  function(){
@@ -27,8 +26,8 @@ myApp.controller('UserController', function (shelfService){
     };
 
     shelfService.sendRegister(userInfo);
-    vm.usernameInput = '';
-    vm.passwordInput ='';
+    vm.usernameRegister = '';
+    vm.passwordRegister = '';
   };
 
 });
