@@ -10,7 +10,7 @@ Sass
 Bootstrap
 
 #### To-Do
-- [√] Install dependencies
+- [x] Install dependencies
 - [ ] Write server code
 - [ ] Create and link routes
 - [ ] Create front page that displays shelf publicly
