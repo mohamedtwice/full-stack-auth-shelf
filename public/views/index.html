@@ -15,7 +15,7 @@
 
   <header class="jumbotron">
     <div class="container-fluid">
-      <h1>Our Bookshelf</h1>
+      <h1>Our Shelf</h1>
     </div>
   </header>
   <div ng-app='myApp' class="container">
@@ -29,8 +29,8 @@
           <form ng-submit="uc.logIn()" class="">
             <input ng-model='uc.usernameInput' type="text" name="" value="" placeholder="Username">
             <input ng-model='uc.passwordInput' type="password" name="" value="" placeholder="Password">
-            <button ng-click="uc.logIn()" type="button" name="button">Login</button>
-            <p>Don't have a login? <button type="button" name="button" class="buttonToRegisterPage" ng-click="uc.toggleLogin()">Register here!</button></p>
+            <button class = "btn btn-primary " ng-click="uc.logIn()" type="button" name="button">Login</button>
+            <p>Don't have a login? <button type="button" name="button" class="btn btn-primary " ng-click="uc.toggleLogin()">Register here!</button></p>
           </form>
         </div>
       <!-- register -->
@@ -40,7 +40,7 @@
           <form ng-submit="uc.register()" class="">
             <input ng-model='uc.usernameRegister' type="text" name="" value="" placeholder="Username">
             <input ng-model='uc.passwordRegister' type="password" name="" value="" placeholder="Password">
-            <button ng-click="uc.register()" type="button" name="button">Register</button>
+            <button ng-click="uc.register()" type="button" name="button" class = "btn btn-primary ">Register</button>
             <p>Already registered? <button type="button" name="button" class="buttonToLoginPage" ng-click="uc.toggleLogin()">Login here!</button></p>
           </form>
         </div>
@@ -50,7 +50,7 @@
       <div ng-show="uc.registeredUser">
         Logged in as: {{uc.name}}
         <div class=""><a href="/#!/submit">Add Item</a></div>
-        <button type="button" name="button" ng-click="uc.logOut()"> Log Out</button>
+        <button type="button" name="button" ng-click="uc.logOut()" class = "btn btn-primary "> Log Out</button>
       </div>
     </section>
 

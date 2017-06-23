@@ -1,10 +1,15 @@
-<h1>Shelf Info</h1>
+<h2>Items on our Shelf</h2>
 <section ng-controller='UserController as uc' ng-init="uc.getItems()">
   <div class="row">
     <div class="col-sm-4" ng-repeat="item in uc.shelfArray">
-    {{item.name}}
-    {{item.description}}
+      <div class="thumbnail">
+        <div class="name text-center">
+          <h3>{{item.name}}</h3>
+        </div>
+          <p>{{item.description}}</p>
+
     <img ng-src="{{item.imgUrl}}" alt="image">
+    </div>
     </div>
 
   </div>

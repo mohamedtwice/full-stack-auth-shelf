@@ -1,3 +1,14 @@
 img {
   max-width: 200px;
 }
+
+.name {
+  background-color: #1F6A99;
+  color: white;
+  margin: 0;
+  padding: 10px 0;
+}
+
+p {
+  padding: 20px 10px;
+}
