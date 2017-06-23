@@ -14,9 +14,14 @@ sv.sendLogIn = function(data){
     if (response.data == 'hooray') {
       console.log('logged in');
       sv.loggedIn = true;
+      sv.registeredUser = !sv.registeredUser;
+      console.log('registeredUser in service', sv.registeredUser);
+      return sv.registeredUser;
     } //end logged in
     else {
       sv.loggedIn = false;
+      return sv.error;
+
     }
   }); // end http
 };

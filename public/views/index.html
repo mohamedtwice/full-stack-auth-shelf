@@ -1,57 +1,58 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Full Stack Auth Shelf</title>
-    <link rel="stylesheet" href="vendors/bootstrap.min.css">
-    <link rel="stylesheet" href="styles/styles.css">
-    <script src="vendors/angular.min.js" charset="utf-8"></script>
-    <script src="vendors/angular-route.min.js" charset="utf-8"></script>
-    <script src="scripts/ourShelf.js" charset="utf-8"></script>
-    <script src="scripts/services/shelfService.js" charset="utf-8"></script>
-  </head>
-  <body>
+<head>
+  <meta charset="utf-8">
+  <title>Full Stack Auth Shelf</title>
+  <link rel="stylesheet" href="vendors/bootstrap.min.css">
+  <link rel="stylesheet" href="styles/styles.css">
+  <script src="vendors/angular.min.js" charset="utf-8"></script>
+  <script src="vendors/angular-route.min.js" charset="utf-8"></script>
+  <script src="scripts/ourShelf.js" charset="utf-8"></script>
+  <script src="scripts/services/shelfService.js" charset="utf-8"></script>
+</head>
+<body>
 
-      <header class="jumbotron">
-        <div class="container-fluid">
-          <h1>Our Bookshelf</h1>
-        </div>
-      </header>
-    <div ng-app='myApp' class="container">
-      <section ng-controller='UserController as uc'>
+  <header class="jumbotron">
+    <div class="container-fluid">
+      <h1>Our Bookshelf</h1>
+    </div>
+  </header>
+  <div ng-app='myApp' class="container">
+    <section ng-controller='UserController as uc'>
 
-        <!-- login -->
-        <div ng-hide="uc.registeredUser">
+      <!-- login -->
+      <div ng-hide="uc.registeredUser">
         <div ng-hide="uc.loggingIn">
 
 
-        <form ng-submit="uc.logIn()" class="">
-          <input ng-model='uc.usernameInput' type="text" name="" value="" placeholder="Username">
-          <input ng-model='uc.passwordInput' type="password" name="" value="" placeholder="Password">
-          <button ng-click="uc.logIn()" type="button" name="button">Login</button>
-          <p>Don't have a login? <button type="button" name="button" class="buttonToRegisterPage" ng-click="uc.toggleLogin()">Register here!</button></p>
-        </form>
-</div>
-</div>
-        <!-- register -->
-        <div ng-hide="uc.registeredUser">
+          <form ng-submit="uc.logIn()" class="">
+            <input ng-model='uc.usernameInput' type="text" name="" value="" placeholder="Username">
+            <input ng-model='uc.passwordInput' type="password" name="" value="" placeholder="Password">
+            <button ng-click="uc.logIn()" type="button" name="button">Login</button>
+            <p>Don't have a login? <button type="button" name="button" class="buttonToRegisterPage" ng-click="uc.toggleLogin()">Register here!</button></p>
+          </form>
+        </div>
+      <!-- register -->
+
         <div ng-show="uc.loggingIn">
 
-        <form ng-submit="uc.register()" class="">
-          <input ng-model='uc.usernameRegister' type="text" name="" value="" placeholder="Username">
-          <input ng-model='uc.passwordRegister' type="password" name="" value="" placeholder="Password">
-          <button ng-click="uc.register()" type="button" name="button">Register</button>
-          <p>Already registered? <button type="button" name="button" class="buttonToLoginPage" ng-click="uc.toggleLogin()">Login here!</button></p>
-        </form>
-          </div>
+          <form ng-submit="uc.register()" class="">
+            <input ng-model='uc.usernameRegister' type="text" name="" value="" placeholder="Username">
+            <input ng-model='uc.passwordRegister' type="password" name="" value="" placeholder="Password">
+            <button ng-click="uc.register()" type="button" name="button">Register</button>
+            <p>Already registered? <button type="button" name="button" class="buttonToLoginPage" ng-click="uc.toggleLogin()">Login here!</button></p>
+          </form>
         </div>
-        <div ng-show="uc.registeredUser">
-          Logged in as: {{uc.username}}
-          <button type="button" name="button" ng-click="uc.addItem()">Add New Item</button>
-          <button type="button" name="button" ng-click="uc.logOut()"> Log Out</button>
-        </div>
-      </section>
-    </div>
 
-  </body>
+        <!-- after login -->
+      </div>
+      <div ng-show="uc.registeredUser">
+        Logged in as: {{uc.username}}
+        <button type="button" name="button" ng-click="uc.addItem()">Add New Item</button>
+        <button type="button" name="button" ng-click="uc.logOut()"> Log Out</button>
+      </div>
+    </section>
+  </div>
+
+</body>
 </html>

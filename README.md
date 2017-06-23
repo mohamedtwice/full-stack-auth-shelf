@@ -31,3 +31,5 @@ a. Redirects to add item form
 5. Save form data to database linked to user
 
 #### Challenges
+
+1. We are having issues if a person doesn't have a username and password, our server is crashing.

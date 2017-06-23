@@ -4,7 +4,7 @@ myApp.controller('UserController', function (shelfService){
   console.log('in user controller');
 
   var vm = this;
-vm.loggingIn= true;
+  vm.loggingIn= true;
   vm.registeredUser = false;
 
   vm.logIn = function(){
@@ -14,13 +14,20 @@ vm.loggingIn= true;
       password: vm.passwordInput
     }; // end user info
 
-    shelfService.sendLogIn(userInfo).then(function() {
-      vm.name = vm.usernameInput;
-    vm.usernameInput = '';
-    vm.passwordInput = '';
-    // Allows for shelf form to show when logged in
-    vm.hasName = shelfService.loggedIn;
-        }); // end shelfService
+    if(vm.usernameInput == '' || vm.passwordInput ==''){
+      alert('No username entered');
+    }
+    else{
+      shelfService.sendLogIn(userInfo).then(function() {
+        vm.name = vm.usernameInput;
+        vm.usernameInput = '';
+        vm.passwordInput = '';
+      // Allows for shelf form to show when logged in
+        vm.hasName = shelfService.loggedIn;
+        vm.registeredUser = shelfService.registeredUser;
+        // Allows toggle to show user is logged in
+  }); // end shelfService
+  }
   }; //end login
 
   //logout
