@@ -5,7 +5,7 @@
 
 
       <h3>Name</h3>
-      <input type="text" class="form-control" placeholder="Name" ng-required="{string}" ng-model="uc.name">
+      <input type="text" class="form-control" placeholder="Name" ng-required="{string}" ng-model="uc.itemName">
 
 
       <h3>Description</h3>
@@ -13,7 +13,7 @@
       <h3>Image Url</h3>
       <input type="text" class="form-control" placeholder="800" ng-required="{ string }"  ng-model="uc.imageUrl">
 
-      <button type="submit" class="btn btn-primary submitButton"  ng-disabled="userForm.$invalid" ng-click="uc.submitItem()">Submit item</button>
+      <button type="submit" class="btn btn-primary submitButton"  ng-disabled="userForm.$invalid" ng-click="uc.addItem()">Submit item</button>
 
     </form>
   </section>
