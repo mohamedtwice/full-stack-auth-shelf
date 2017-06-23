@@ -13,7 +13,7 @@ myApp.controller('UserController', function (shelfService){
   console.log('in user controller');
 
   var vm = this;
-  vm.loggingIn= true;
+  vm.loggingIn= false;
   vm.registeredUser = false;
 
   vm.logIn = function(){

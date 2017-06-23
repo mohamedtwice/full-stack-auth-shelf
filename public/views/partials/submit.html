@@ -1,1 +1,20 @@
-<h1>In Submit</h1>
+<div ng-controller="UserController as uc">
+  <section class="container submitForm">
+    <form class="form-horizontal">
+
+
+
+      <h3>Name</h3>
+      <input type="text" class="form-control" placeholder="Name" ng-required="{string}" ng-model="uc.name">
+
+
+      <h3>Description</h3>
+      <input type="text" class="form-control" placeholder="Description" ng-required="{ string }"  ng-model="uc.description">
+      <h3>Image Url</h3>
+      <input type="text" class="form-control" placeholder="800" ng-required="{ string }"  ng-model="uc.imageUrl">
+
+      <button type="submit" class="btn btn-primary submitButton"  ng-disabled="userForm.$invalid" ng-click="uc.submitItem()">Submit item</button>
+
+    </form>
+  </section>
+</div>
