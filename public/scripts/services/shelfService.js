@@ -37,4 +37,12 @@ sv.sendRegister = function(data){
   }); // end http
 };
 
+sv.getItems = function(){
+    console.log('in get item in service');
+    return $http.get('/shelf').then(function(response){
+      console.log('back from the /get with', response);
+      return response.data;
+    });
+};
+
 });

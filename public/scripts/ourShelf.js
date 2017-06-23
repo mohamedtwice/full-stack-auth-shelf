@@ -15,13 +15,7 @@ myApp.controller('UserController', function (shelfService, addItemService){
   var vm = this;
   vm.loggingIn= false;
   vm.registeredUser = false;
-// if (vm.name == undefined){
-//   vm.name = '';
-// }
-
-
-
-  vm.shelfObjects = [];
+ vm.shelfArray = [];
 
   vm.logIn = function(){
     console.log('in login');
@@ -88,7 +82,17 @@ myApp.controller('UserController', function (shelfService, addItemService){
     addItemService.sendAddItem(objectToSend).then(function(){
       console.log('back in addItem from server');
     });
+    
+    window.location = "#!/";
   }; //end addItem
+
+vm.getItems = function() {
+  console.log('in getItems');
+  shelfService.getItems().then(function(data) {
+  vm.shelfArray = data;
+});
+};
+
 
 }); // end controller
 

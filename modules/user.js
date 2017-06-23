@@ -1,6 +1,6 @@
 var mongoose = require( 'mongoose' );
 
-mongoose.connect( 'localhost:27017/omegaShelf' );
+mongoose.connect( 'localhost:27017/itemShelf' );
 
 var userSchema = new mongoose.Schema({
   username: String,
