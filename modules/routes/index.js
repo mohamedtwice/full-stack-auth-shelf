@@ -23,7 +23,7 @@ if (err) {
   res.sendStatus(400);
 } //end if err
 else {
-  if (user !== undefined) {
+  if (user != undefined) {
     console.log('comparing:', req.body.password, user.password);
     bcrypt.compare(req.body.password, user.password, function(err, isMatch) {
       if (err) {

@@ -1,4 +1,13 @@
-var myApp = angular.module('myApp', []);
+var myApp = angular.module('myApp', ['ngRoute']);
+
+myApp.config(function($routeProvider){
+  $routeProvider.when('/', {
+    templateUrl: 'views/partials/shelf.html',
+    controller:'UserController as uc'
+  }).when('/submit', {
+    templateUrl: 'views/partials/submit.html',
+  }); //end submit
+}); //end config
 
 myApp.controller('UserController', function (shelfService){
   console.log('in user controller');
@@ -14,9 +23,9 @@ myApp.controller('UserController', function (shelfService){
       password: vm.passwordInput
     }; // end user info
 
-    if(vm.usernameInput == '' || vm.passwordInput ==''){
-      alert('No username entered');
-    }
+    if(vm.usernameInput  == undefined || vm.passwordInput == undefined || vm.usernameInput  == '' || vm.passwordInput == '' ){
+      alert('No username or password entered');
+    } //end if
     else{
       shelfService.sendLogIn(userInfo).then(function() {
         vm.name = vm.usernameInput;
@@ -27,7 +36,7 @@ myApp.controller('UserController', function (shelfService){
         vm.registeredUser = shelfService.registeredUser;
         // Allows toggle to show user is logged in
   }); // end shelfService
-  }
+} //end else
   }; //end login
 
   //logout
@@ -55,5 +64,9 @@ vm.username= '';
 vm.toggleLogin=function(){
   vm.loggingIn=!vm.loggingIn;
 };
+
+// vm.addItem = function(){
+//
+// }; //end addItem
 
 }); // end controller
